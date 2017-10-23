@@ -28,11 +28,13 @@ if __name__ == "__main__":
             # Process closing bracket, write your code here
             if len(opening_brackets_stack) == 0:
                 opening_brackets_stack.append(Bracket(next, i))
-
+                break
+            
             top = opening_brackets_stack.pop()
 
             if not top.Match(next):
                 opening_brackets_stack.append(Bracket(next, i))
+                break
 
     # Printing answer, write your code here
     if len(opening_brackets_stack) == 0:
