@@ -49,7 +49,7 @@ class LinkedList:
             previous_node = current_node
             current_node = current_node.next
 
-        if deleted == False:
+        if deleted is False:
             print("{} is not in the list".format(value))
         else:
             print("{} is deleted".format(value))
