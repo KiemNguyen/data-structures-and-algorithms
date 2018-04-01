@@ -1,0 +1,2 @@
+# Coding Challenges
+My solutions to various coding challenges with a focus on algorithms and data structures. I love solving the coding challenges so I could grow and improve my skills. I would like to share my solutions with others so that they can see how I think and solve these coding challenges. Even though my solutions pass all the test cases, they still may not be perfect. I would greatly appreciate your feedback or comment on my solutions. Thank you and happy coding :)
