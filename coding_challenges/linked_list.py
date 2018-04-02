@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 12 12:55:43 2018
-
-@author: kiem
-"""
-
 class Node:
     def __init__(self, x):
         self.data = x
