@@ -71,14 +71,6 @@ class LinkedList:
         print(temp.data, "-> None")
         return True
 
-    def search_node(self, value):
-        temp = self.head.next
-        while temp.next is not None:
-            if temp.next == value:
-                return True
-            else:
-                return False
-
 linked_list = LinkedList()
 linked_list.print_list()
 
