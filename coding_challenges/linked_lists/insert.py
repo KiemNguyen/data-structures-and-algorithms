@@ -11,12 +11,12 @@ class LinkedList:
     
     # Function to insert a new node at the beginning
     def insert_at_head(self, new_data):
-        # 2. Create a new node $
+        # 2. Create a new node
         # 3. Put in the data
         new_node = Node(new_data)
-        # 3. Make next of new node as head:
+        # 3. Make next element of the new node to be the next element of the Head:
         new_node.next = self.head.next
-        # 4. Move the head to point to new Node
+        # 4. Make next element of the Head to be this new node
         self.head.next = new_node
         return self.head
         
@@ -29,7 +29,7 @@ class LinkedList:
         # 2. Create a new node $
         # 3. Put in the data
         new_node = Node(new_data)
-        # 4. Make next of new Node as next of prev_node
+        # 4. Make next element of the new Node to be the next element of prev_node
         new_node.next = prev_node.next
         # 5. Make next of prev_node as new_node
         prev_node.next = new_node
@@ -70,6 +70,14 @@ class LinkedList:
             temp = temp.next
         print(temp.data, "-> None")
         return True
+
+    def search_node(self, value):
+        temp = self.head.next
+        while temp.next is not None:
+            if temp.next == value:
+                return True
+            else:
+                return False
 
 linked_list = LinkedList()
 linked_list.print_list()
