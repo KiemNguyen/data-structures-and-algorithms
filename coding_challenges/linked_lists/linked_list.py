@@ -66,7 +66,7 @@ class LinkedList:
             return False
         temp = self.head.next
         while temp.next is not None:
-            print(temp.data, "->")
+            print(temp.data, "->", end="")
             temp = temp.next
         print(temp.data, "-> None")
         return True
