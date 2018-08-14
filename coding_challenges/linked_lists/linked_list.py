@@ -1,34 +1,27 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 class Node:
-    def __init__(self, x):
-        self.data = x
+    def __init__(self, data):
+        self.data = data
         self.next = None
-    
+
+
 class LinkedList:
     # Function to initialize head
     def __init__(self):
-        self.head = None
-        
-    # Function to print contents of a linked list
-    def printList(self):
-        temp = self.head
-        while (temp is not None):
-            print(temp.data, end = " ")   
-            temp = temp.next
+        self.head = Node(-1)
     
     # Function to insert a new node at the beginning
-    def push(self, new_data):
+    def insert_at_head(self, new_data):
         # 2. Create a new node $
         # 3. Put in the data
-        new_node  = Node(new_data)
+        new_node = Node(new_data)
         # 3. Make next of new node as head:
-        new_node.next = self.head
+        new_node.next = self.head.next
         # 4. Move the head to point to new Node
-        self.head = new_node
+        self.head.next = new_node
+        return self.head
         
     # Function to add a new node after a given node
-    def insertAfter(self, prev_node, new_data):
+    def insert_after(self, prev_node, new_data):
         # 1. Check if the given prev_node exists:
         if prev_node is None:
             print("No previous Node")
@@ -58,21 +51,29 @@ class LinkedList:
             last = last.next
         # 6. Change the next of last node
         last.next = new_node
-        
-    
-        
-# Code execution starts here
-if __name__ == "__main__":
-    
-    llist = LinkedList()
-    llist.head = Node(1)
-    second = Node(2)
-    third = Node(3)
-    
-    llist.head.next = second
-    second.next = third
-    
-    llist.printList()
 
+    # Function to check if the linked list is empty
+    def is_empty(self):
+        if self.head.next is None:
+            return True
+        else:
+            return False
 
-        
+    # Function to print contents of a linked list
+    def print_list(self):
+        if self.is_empty():
+            print("List is empty")
+            return False
+        temp = self.head.next
+        while temp.next is not None:
+            print(temp.data, "->")
+            temp = temp.next
+        print(temp.data, "-> None")
+        return True
+
+linked_list = LinkedList()
+linked_list.print_list()
+
+for i in range(1,10,1):
+    linked_list.insert_at_head(i)
+linked_list.print_list()
